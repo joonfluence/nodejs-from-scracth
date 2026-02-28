@@ -6,10 +6,11 @@ function heavyWork() {
 }
 
 const server = http.createServer((req, res) => {
+  console.log(`[${new Date().toISOString()}] 요청 받음: ${req.url}`);
   if (req.url === '/heavy') {
-    console.log('/heavy 시작:', new Date().toISOString());
+    console.log(`[${new Date().toISOString()}] /heavy 시작`);
     heavyWork();
-    console.log('/heavy 끝:', new Date().toISOString());
+    console.log(`[${new Date().toISOString()}] /heavy 끝`);
     res.end('heavy 완료');
     return;
   }
