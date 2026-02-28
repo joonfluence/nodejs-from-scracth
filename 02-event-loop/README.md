@@ -8,6 +8,7 @@
 |------|-----------|
 | [blocking-test.js](./blocking-test.js) | CPU 블로킹이 모든 요청을 멈추는 현상 |
 | [file-test.js](./file-test.js) | `readFileSync` vs `readFile` — 서버에서 Sync 함수를 쓰면 안 되는 이유 |
+| [concurrent-request.js](./concurrent-request.js) | 싱글 스레드인데 동시 요청이 처리되는 원리 |
 
 ## 핵심 개념
 
@@ -27,4 +28,8 @@ node blocking-test.js
 node file-test.js
 # curl http://localhost:3000/sync
 # curl http://localhost:3000/async
+
+# 동시 요청 처리 확인 (브라우저 탭 3개로 동시 접속)
+node concurrent-request.js
+# → 3개 모두 거의 동시에 3초 후 응답
 ```
