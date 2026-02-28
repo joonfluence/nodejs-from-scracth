@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
 
   setTimeout(() => {
     res.end(`응답: ${new Date().toISOString()}`);
-  }, 3000);
+  }, 5000);
 });
 
 server.listen(3000, () => {

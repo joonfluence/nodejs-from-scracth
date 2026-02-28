@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  console.log('/hello 응답:', new Date().toISOString());
+  console.log(`[${new Date().toISOString()}] /hello 응답`);
   res.end('hello!');
 });
 
